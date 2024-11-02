@@ -9,7 +9,7 @@ const checklistItemSchema = new mongoose.Schema({
 const taskSchema = new mongoose.Schema({
   title: { type: String, required: true },
   priority: { type: String, required: true },
-  dueDate: { type: Date },
+  dueDate: { type: Date, default: null },
   state: { type: String, default: 'todo' },
   sharedWith: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
